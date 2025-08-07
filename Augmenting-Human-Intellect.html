@@ -161,7 +161,7 @@
 													<div id="02">
 														<h1><a name="1"></a> I. INTRODUCTION </h1>
 														<div id="03">
-															<a name="1a"></a><a name="General"></a>
+															<a name="1a"></a>
 															<h2> A. GENERAL </h2>
 															<div id="04">
 																<p class="level3"> By "augmenting human intellect" we mean increasing the capability of a man to approach a complex problem situation,
@@ -4102,9 +4102,22 @@
 							elem.remove();
 						}
 					}
-
 				})();
+
+
 				return;
+				(function() {
+					console.log('unwrapping from single child divs');
+					let arr = Array.from(document.querySelectorAll('div'));
+					for(let i = 0; i < arr.length; i++) {
+						let parent = arr[i];
+						if(parent.childElementCount == 1) {
+							parent.parentElement.insertBefore(arr[i].firstElementChild, parent);
+							parent.remove();
+						}
+					}
+				})();
+
 			})();
 
 		</script>
