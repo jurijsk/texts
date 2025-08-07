@@ -1,4 +1,3 @@
-/* Document-specific structural improvements for Engelbart text */
 
 /* Improve the document header and title */
 .mainheading {
@@ -17,10 +16,7 @@ div[hs\:nid] {
 	position: static !important;
 }
 
-/* Improve anchor spacing */
-a[name] {
-	scroll-margin-top: var(--spacing-xl);
-}
+
 
 /* Better styling for the hierarchical content structure */
 .level1 {
