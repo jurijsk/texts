@@ -1,0 +1,4 @@
+img[src="data:,"],
+	source[src="data:,"] {
+		display: none !important
+	}

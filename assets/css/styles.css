@@ -1,0 +1,16 @@
+/* Consolidated CSS for Engelbart Document */
+
+/* Root variables */
+:root {
+	--sf-img-1: url("../images/image_01.gif")
+}
+
+/* Import all other stylesheets */
+@import 'style_02.css';
+@import 'main-styles.css';
+@import 'style_04.css';
+@import 'style_05.css';
+@import 'style_06.css';
+@import 'style_07.css';
+@import 'style_08.css';
+@import 'style_09.css';

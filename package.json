@@ -1,0 +1,21 @@
+{
+	"name": "engelbart",
+	"version": "1.0.0",
+	"description": "Engelbart project with http-server",
+	"main": "index.js",
+	"scripts": {
+		"start": "http-server",
+		"serve": "http-server -p 3000 -o",
+		"dev": "http-server -p 8080 -o -c-1",
+		"serve-doc": "http-server -p 3000 -o Augmenting-Human-Intellect.html"
+	},
+	"keywords": [
+		"engelbart",
+		"http-server"
+	],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"http-server": "^14.1.1"
+	}
+}
