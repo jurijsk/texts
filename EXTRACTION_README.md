@@ -11,6 +11,7 @@ engelbart/
 ├── assets/
 │   ├── css/                     # Stylesheets
 │   │   ├── styles.css          # Main consolidated stylesheet
+│   │   ├── fonts.css           # Font face declarations
 │   │   ├── root-variables.css  # CSS custom properties
 │   │   ├── main-styles.css     # Core document styles  
 │   │   └── style_*.css         # Individual style blocks
@@ -19,10 +20,18 @@ engelbart/
 │   │   ├── image_*.jpeg        # Various document images
 │   │   ├── image_*.png         # Icons and graphics
 │   │   └── image_06.ico        # Favicon
+│   ├── fonts/                  # Extracted font files
+│   │   ├── Inter_VF_*.woff2    # Inter Variable Font (normal & italic)
+│   │   ├── Source_Serif_VF_*.woff2 # Source Serif Variable Font
+│   │   ├── Roboto_Mono_VF_*.ttf    # Roboto Mono Variable Font
+│   │   └── Public_Sans_VF_*.ttf    # Public Sans Variable Font
 │   └── js/                     # JavaScript files (if any)
 ├── package.json                # Node.js project configuration
 ├── README.md                   # Project documentation
-└── extract_embedded.py        # Script used to extract resources
+└── utils/                      # Transformation scripts
+    ├── extract_embedded.py    # Extract CSS and images
+    ├── extract_fonts.py       # Extract embedded fonts
+    └── consolidate_css.py     # Consolidate CSS references
 ```
 
 ## Extracted Resources
@@ -39,6 +48,11 @@ engelbart/
 - **11 JPEG**: Various document images and backgrounds
 - **14 PNG**: Icons, graphics, and interface elements  
 - **1 ICO**: Website favicon
+
+### Fonts (8 files extracted)
+- **4 WOFF2**: Modern web fonts (Inter VF, Source Serif VF)
+- **4 TTF**: TrueType fonts (Roboto Mono VF, Public Sans VF)
+- All fonts are variable fonts supporting multiple weights and styles
 
 ## Development Commands
 
