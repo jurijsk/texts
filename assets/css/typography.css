@@ -1,0 +1,185 @@
+/* Advanced typography and text-specific improvements */
+
+/* Improve text selection */
+::selection {
+	background-color: rgba(68, 104, 152, 0.2);
+	color: inherit;
+}
+
+::-moz-selection {
+	background-color: rgba(68, 104, 152, 0.2);
+	color: inherit;
+}
+
+/* Better text rendering */
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+/* Improve readability for specific content elements */
+.originally-underlined {
+	text-decoration: underline;
+	text-decoration-color: var(--text-secondary);
+	text-underline-offset: 2px;
+	text-decoration-thickness: 1px;
+}
+
+/* Citations and references */
+sup {
+	font-size: 0.75em;
+	vertical-align: super;
+	line-height: 0;
+}
+
+/* Better spacing for nested divs with IDs (common in the document) */
+div[id]+div[id] {
+	margin-top: var(--spacing-md);
+}
+
+/* Improve blockquote styling if any exist */
+blockquote {
+	margin: var(--spacing-lg) 0;
+	padding: var(--spacing-md) var(--spacing-lg);
+	border-left: 4px solid var(--border-color);
+	background-color: var(--bg-secondary);
+	font-style: italic;
+}
+
+/* Code and preformatted text improvements */
+code,
+pre {
+	font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+	background-color: var(--bg-secondary);
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 0.9em;
+}
+
+pre {
+	padding: var(--spacing-md);
+	overflow-x: auto;
+	line-height: 1.4;
+}
+
+pre code {
+	background: none;
+	padding: 0;
+}
+
+/* Improve emphasis and strong text */
+em {
+	font-style: italic;
+	color: var(--text-primary);
+}
+
+strong,
+b {
+	font-weight: 600;
+	color: var(--text-primary);
+}
+
+/* Better spacing for definition lists if any exist */
+dl {
+	margin: var(--spacing-lg) 0;
+}
+
+dt {
+	font-weight: 600;
+	margin-top: var(--spacing-md);
+	margin-bottom: var(--spacing-sm);
+}
+
+dd {
+	margin-left: var(--spacing-lg);
+	margin-bottom: var(--spacing-md);
+}
+
+/* Improve table of contents styling if present */
+.toc {
+	background-color: var(--bg-secondary);
+	border: 1px solid var(--border-color);
+	border-radius: 6px;
+	padding: var(--spacing-lg);
+	margin: var(--spacing-xl) 0;
+}
+
+.toc h2,
+.toc h3,
+.toc h4 {
+	margin-top: 0;
+	color: var(--text-secondary);
+}
+
+.toc ul {
+	list-style: none;
+	padding-left: var(--spacing-md);
+}
+
+.toc li {
+	margin-bottom: var(--spacing-xs);
+}
+
+/* Footnotes styling */
+.footnote {
+	font-size: var(--font-size-small);
+	color: var(--text-secondary);
+	margin-top: var(--spacing-xl);
+	border-top: 1px solid var(--border-color);
+	padding-top: var(--spacing-md);
+}
+
+/* Better focus indicators for screen readers */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Skip to content link */
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 6px;
+	background: var(--link-color);
+	color: white;
+	padding: 8px;
+	text-decoration: none;
+	border-radius: 3px;
+	z-index: 1000;
+}
+
+.skip-link:focus {
+	top: 6px;
+}
+
+/* Improve contrast for better accessibility */
+@media (prefers-contrast: high) {
+	:root {
+		--text-primary: #000;
+		--text-secondary: #333;
+		--link-color: #0000ff;
+		--link-hover: #0000cc;
+		--border-color: #000;
+	}
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

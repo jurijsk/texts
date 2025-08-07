@@ -1,0 +1,173 @@
+/* Document-specific structural improvements for Engelbart text */
+
+/* Improve the document header and title */
+.mainheading {
+	max-width: var(--content-wide-width);
+	margin: var(--spacing-xxl) auto var(--spacing-xl) auto !important;
+	text-align: center;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-weight: 300;
+	color: var(--text-primary);
+	line-height: 1.2;
+}
+
+/* Better styling for the nested div structure */
+div[hs\:nid] {
+	margin-bottom: var(--spacing-lg);
+	position: static !important;
+}
+
+/* Improve anchor spacing */
+a[name] {
+	scroll-margin-top: var(--spacing-xl);
+}
+
+/* Better styling for the hierarchical content structure */
+.level1 {
+	margin: var(--spacing-xxl) 0;
+	border-top: 3px solid var(--border-color);
+	padding-top: var(--spacing-xl);
+}
+
+.level2 {
+	margin: var(--spacing-xl) 0;
+	padding-left: var(--spacing-sm);
+	border-left: 2px solid var(--border-color);
+	border-radius: 0 0 0 4px;
+}
+
+.level3 {
+	margin: var(--spacing-lg) 0;
+	padding-left: var(--spacing-md);
+}
+
+.level4 {
+	margin: var(--spacing-md) 0;
+	text-indent: var(--spacing-sm);
+}
+
+.level5 {
+	margin: var(--spacing-md) 0;
+	padding-left: var(--spacing-lg);
+	font-size: 0.95em;
+	color: var(--text-secondary);
+}
+
+/* Improve figure captions */
+.figureCaptionCell {
+	font-weight: 500;
+	color: var(--text-primary);
+	margin-top: var(--spacing-sm);
+	padding: var(--spacing-sm);
+	background-color: var(--bg-secondary);
+	border-radius: 4px;
+	border: 1px solid var(--border-color);
+}
+
+/* Better organization for the content sections */
+table.contentpaneopen {
+	margin: 0 !important;
+	padding: 0 !important;
+	background: none !important;
+	border: none !important;
+}
+
+/* Ensure proper spacing between major sections */
+div[id^="0"]+div[id^="0"] {
+	margin-top: var(--spacing-xxl);
+}
+
+/* Improve the document flow */
+#Body>div {
+	max-width: var(--content-max-width);
+	margin: 0 auto;
+}
+
+/* Better handling of inline citations */
+a[href*="#Ref-"] {
+	font-size: 0.85em;
+	vertical-align: super;
+	text-decoration: none;
+	color: var(--link-color);
+	font-weight: 500;
+}
+
+a[href*="#Ref-"]:hover {
+	text-decoration: underline;
+}
+
+/* Improve the visual hierarchy */
+span.purplenumber a,
+span.purplenumberH2 a,
+span.purplenumberH3 a,
+span.purplenumberH4 a,
+span.purplenumberFigure a {
+	font-size: 0.8em;
+	color: var(--text-muted);
+	text-decoration: none;
+	font-weight: normal;
+}
+
+span.purplenumber a:hover,
+span.purplenumberH2 a:hover,
+span.purplenumberH3 a:hover,
+span.purplenumberH4 a:hover,
+span.purplenumberFigure a:hover {
+	color: var(--link-color);
+	text-decoration: underline;
+}
+
+/* Better organization for nested content */
+div[id] div[id] {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Improve readability on very wide screens */
+@media (min-width: 1400px) {
+	#Contents {
+		font-size: 1.125rem;
+		line-height: 1.7;
+	}
+
+	.level4,
+	.level5 {
+		max-width: 55ch;
+		/* Optimal line length for reading */
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+
+	.level1,
+	.level2 {
+		border: none;
+		padding: 0;
+	}
+
+	.level2 {
+		padding-left: 0;
+	}
+
+	.level4 {
+		text-indent: 0;
+	}
+
+	.level5 {
+		padding-left: var(--spacing-sm);
+		font-size: 0.9em;
+	}
+
+	span.purplenumber,
+	span.purplenumberH2,
+	span.purplenumberH3,
+	span.purplenumberH4,
+	span.purplenumberFigure {
+		display: block;
+		margin-top: var(--spacing-xs);
+		margin-left: 0;
+	}
+}

@@ -1,0 +1,376 @@
+/* Responsive Design and Typography Improvements for Engelbart Document */
+
+/* Root variables for consistent design */
+:root {
+	/* Typography scale */
+	--font-size-base: 16px;
+	--font-size-small: 0.875rem;
+	--font-size-large: 1.125rem;
+	--line-height-base: 1.6;
+	--line-height-tight: 1.4;
+	--line-height-loose: 1.8;
+
+	/* Spacing scale */
+	--spacing-xs: 0.25rem;
+	--spacing-sm: 0.5rem;
+	--spacing-md: 1rem;
+	--spacing-lg: 1.5rem;
+	--spacing-xl: 2rem;
+	--spacing-xxl: 3rem;
+
+	/* Content width constraints */
+	--content-max-width: 45rem;
+	/* ~720px for optimal reading */
+	--content-wide-width: 55rem;
+	/* ~880px for wider sections */
+	--sidebar-width: 250px;
+
+	/* Colors */
+	--text-primary: #333;
+	--text-secondary: #666;
+	--text-muted: #888;
+	--bg-primary: #fff;
+	--bg-secondary: #f8f9fa;
+	--border-color: #e2e8f0;
+	--link-color: #446898;
+	--link-hover: #5698cc;
+}
+
+/* Base typography improvements */
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-base);
+	color: var(--text-primary);
+	background-color: var(--bg-primary);
+}
+
+/* Improve content container layout */
+#ContentArea {
+	max-width: none;
+	padding: 0;
+	margin: 0;
+}
+
+#Body {
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: var(--spacing-md);
+	gap: var(--spacing-lg);
+}
+
+/* Main content typography */
+#Contents {
+	max-width: var(--content-max-width);
+	margin: 0 auto;
+	padding: var(--spacing-lg);
+}
+
+/* Responsive content width */
+.contentpaneopen {
+	width: 100%;
+	max-width: none;
+}
+
+.contentpaneopen td {
+	padding: 0;
+	vertical-align: top;
+}
+
+/* Typography improvements */
+h1,
+.mainheading {
+	font-size: 2.5rem;
+	line-height: var(--line-height-tight);
+	margin-bottom: var(--spacing-lg);
+	color: var(--text-primary);
+	text-align: center;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 2rem;
+	line-height: var(--line-height-tight);
+	margin-top: var(--spacing-xxl);
+	margin-bottom: var(--spacing-lg);
+	color: var(--text-primary);
+	font-weight: 600;
+	border-bottom: 2px solid var(--border-color);
+	padding-bottom: var(--spacing-sm);
+}
+
+h3 {
+	font-size: 1.5rem;
+	line-height: var(--line-height-tight);
+	margin-top: var(--spacing-xl);
+	margin-bottom: var(--spacing-md);
+	color: var(--text-primary);
+	font-weight: 600;
+}
+
+h4 {
+	font-size: 1.25rem;
+	line-height: var(--line-height-tight);
+	margin-top: var(--spacing-lg);
+	margin-bottom: var(--spacing-sm);
+	color: var(--text-primary);
+	font-weight: 600;
+}
+
+h5 {
+	font-size: 1.125rem;
+	line-height: var(--line-height-tight);
+	margin-top: var(--spacing-md);
+	margin-bottom: var(--spacing-sm);
+	color: var(--text-primary);
+	font-weight: 600;
+}
+
+/* Paragraph improvements */
+p {
+	margin-bottom: var(--spacing-md);
+	line-height: var(--line-height-base);
+	max-width: none;
+	/* Let container handle width */
+}
+
+p.level4,
+p.level5 {
+	margin-bottom: var(--spacing-lg);
+	text-align: justify;
+	hyphens: auto;
+}
+
+/* List improvements */
+ul,
+ol {
+	margin-bottom: var(--spacing-md);
+	padding-left: var(--spacing-lg);
+}
+
+li {
+	margin-bottom: var(--spacing-sm);
+	line-height: var(--line-height-base);
+}
+
+/* Link improvements */
+a {
+	color: var(--link-color);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+a:hover {
+	color: var(--link-hover);
+	text-decoration: underline;
+}
+
+/* Purple number styling improvements */
+.purplenumber,
+.purplenumberH2,
+.purplenumberH3,
+.purplenumberH4,
+.purplenumberFigure {
+	font-size: var(--font-size-small);
+	font-weight: normal;
+	margin-left: var(--spacing-sm);
+	opacity: 0.8;
+}
+
+/* Figure improvements */
+figure {
+	margin: var(--spacing-xl) auto;
+	text-align: center;
+	max-width: var(--content-wide-width);
+}
+
+figure img {
+	max-width: 100%;
+	height: auto;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+	margin-top: var(--spacing-md);
+	font-size: var(--font-size-small);
+	color: var(--text-secondary);
+	font-style: italic;
+	line-height: var(--line-height-base);
+	text-align: center;
+}
+
+/* Table improvements */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: var(--spacing-lg) 0;
+}
+
+/* Content sections with better spacing */
+.level1,
+.level2,
+.level3,
+.level4,
+.level5 {
+	margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	:root {
+		--font-size-base: 14px;
+		--content-max-width: 100%;
+	}
+
+	#Body {
+		padding: var(--spacing-sm);
+	}
+
+	#Contents {
+		padding: var(--spacing-md);
+	}
+
+	h1,
+	.mainheading {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
+
+	h3 {
+		font-size: 1.375rem;
+	}
+
+	h4 {
+		font-size: 1.125rem;
+	}
+
+	figure {
+		margin: var(--spacing-lg) 0;
+	}
+
+	p.level4,
+	p.level5 {
+		text-align: left;
+		hyphens: none;
+	}
+}
+
+@media (max-width: 480px) {
+	:root {
+		--font-size-base: 13px;
+	}
+
+	#Body {
+		padding: var(--spacing-xs);
+	}
+
+	#Contents {
+		padding: var(--spacing-sm);
+	}
+
+	h1,
+	.mainheading {
+		font-size: 1.75rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+	}
+}
+
+/* Print styles */
+@media print {
+	body {
+		font-size: 12pt;
+		line-height: 1.5;
+		color: black;
+		background: white;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		page-break-after: avoid;
+	}
+
+	p,
+	li {
+		page-break-inside: avoid;
+	}
+
+	figure {
+		page-break-inside: avoid;
+	}
+
+	.purplenumber,
+	.purplenumberH2,
+	.purplenumberH3,
+	.purplenumberH4,
+	.purplenumberFigure {
+		color: black !important;
+	}
+
+	a {
+		color: black !important;
+		text-decoration: none !important;
+	}
+
+	a[href^="http"]:after {
+		content: " (" attr(href) ")";
+		font-size: 10pt;
+		color: #666;
+	}
+}
+
+/* Focus improvements for accessibility */
+a:focus,
+button:focus {
+	outline: 2px solid var(--link-color);
+	outline-offset: 2px;
+}
+
+/* Improved readability on larger screens */
+@media (min-width: 1200px) {
+	:root {
+		--content-max-width: 50rem;
+		/* Slightly wider on very large screens */
+	}
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-primary: #e2e8f0;
+		--text-secondary: #a0aec0;
+		--text-muted: #718096;
+		--bg-primary: #1a202c;
+		--bg-secondary: #2d3748;
+		--border-color: #4a5568;
+		--link-color: #90cdf4;
+		--link-hover: #bee3f8;
+	}
+}
+
+/* Smooth scrolling for internal links */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Improved spacing for nested content */
+div[id] {
+	scroll-margin-top: var(--spacing-lg);
+}

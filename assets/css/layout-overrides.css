@@ -1,0 +1,118 @@
+/* Layout overrides for better structure and responsiveness */
+
+/* Remove fixed positioning and layout constraints */
+#LeftBorder,
+#RightBorder {
+	position: static !important;
+	width: auto !important;
+	height: auto !important;
+	background: none !important;
+	border: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* Simplify the main content area */
+#ContentArea {
+	position: static !important;
+	width: 100% !important;
+	max-width: 1200px !important;
+	margin: 0 auto !important;
+	padding: 0 !important;
+	background: transparent !important;
+}
+
+/* Improve the main body layout */
+#Body {
+	width: 100% !important;
+	max-width: none !important;
+	margin: 0 !important;
+	padding: var(--spacing-md, 1rem) !important;
+	background: transparent !important;
+	position: static !important;
+}
+
+/* Handle left panel if it exists */
+#LeftPanel {
+	display: none;
+	/* Hide for better readability, or style appropriately */
+}
+
+/* Ensure contents take full width */
+#Contents {
+	width: 100% !important;
+	max-width: var(--content-max-width, 45rem) !important;
+	margin: 0 auto !important;
+	padding: var(--spacing-lg, 1.5rem) !important;
+	background: transparent !important;
+}
+
+/* Remove any fixed positioning from child elements */
+#Contents>* {
+	position: static !important;
+}
+
+/* Ensure tables are responsive */
+.contentpaneopen {
+	width: 100% !important;
+	table-layout: auto !important;
+	border-collapse: collapse !important;
+	border: none !important;
+	background: transparent !important;
+}
+
+.contentpaneopen td {
+	display: block !important;
+	width: 100% !important;
+	padding: 0 !important;
+	border: none !important;
+	background: transparent !important;
+}
+
+/* Override any absolute positioning */
+div[style*="position: absolute"],
+div[style*="position: fixed"] {
+	position: static !important;
+}
+
+/* Remove any background images that might interfere */
+div[style*="background-image"] {
+	background-image: none !important;
+}
+
+/* Ensure text content flows properly */
+div[id] {
+	width: auto !important;
+	height: auto !important;
+	position: static !important;
+	overflow: visible !important;
+}
+
+/* Mobile-specific layout improvements */
+@media (max-width: 768px) {
+	#ContentArea {
+		padding: var(--spacing-sm, 0.5rem) !important;
+	}
+
+	#Body {
+		padding: var(--spacing-sm, 0.5rem) !important;
+	}
+
+	#Contents {
+		padding: var(--spacing-md, 1rem) !important;
+	}
+}
+
+@media (max-width: 480px) {
+	#ContentArea {
+		padding: var(--spacing-xs, 0.25rem) !important;
+	}
+
+	#Body {
+		padding: var(--spacing-xs, 0.25rem) !important;
+	}
+
+	#Contents {
+		padding: var(--spacing-sm, 0.5rem) !important;
+	}
+}
