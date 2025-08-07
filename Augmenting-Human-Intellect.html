@@ -5348,7 +5348,7 @@
 																developed in <a href=#II>Section
 																	II</a>, to try to impart our feeling of rich
 																promise, and to introduce a possible research program
-																(<a href=https://www.dougengelbart.org/IV>Section
+																(<a href=#IV>Section
 																	IV</a>).<span class=purplenumber><a
 																		href=#3b1>3b1</a></span>
 															</p>
@@ -9713,7 +9713,7 @@
 </body>
 <script type="text/javascript">
 	(function() {
-		console.log('running');
+		console.log('remove papagraph id marks and anchrs that lead to them. They are not use and not needed');
 
 		let si = (document.location.origin + document.location.pathname).length;
 
@@ -9728,11 +9728,25 @@
 			arr[i].remove();
 		}
 
-		console.log('done removing as');
+		console.log('done.');
+
+	})();
 
 
+	(function() {
+		console.log('remove purple marks');
 
-		collection = document.querySelectorAll('span.purplenumber');
+
+		let collection = document.querySelectorAll('span[class^="purplenumber"]');
+
+		let arr = Array.from(collection);
+
+		for(let i = 0; i < arr.length; i++) {
+			arr[i].remove();
+		}
+
+		console.log('done.');
+
 
 
 	})()
