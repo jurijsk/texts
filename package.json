@@ -1,21 +1,31 @@
 {
-	"name": "engelbart",
+	"name": "engelbart-document",
 	"version": "1.0.0",
-	"description": "Engelbart project with http-server",
-	"main": "index.js",
+	"description": "Augmenting Human Intellect: A Conceptual Framework - Interactive Document with TypeScript",
+	"main": "Augmenting-Human-Intellect.html",
 	"scripts": {
 		"start": "http-server",
-		"serve": "http-server -p 3000 -o",
-		"dev": "http-server -p 8080 -o -c-1",
-		"serve-doc": "http-server -p 3000 -o Augmenting-Human-Intellect.html"
+		"serve": "http-server -p 3000 -o Augmenting-Human-Intellect.html",
+		"dev": "concurrently \"npm run watch\" \"npm run serve-dev\"",
+		"serve-dev": "http-server -p 3000 -o Augmenting-Human-Intellect.html -c-1",
+		"build": "tsc",
+		"watch": "tsc --watch",
+		"type-check": "tsc --noEmit",
+		"clean": "rimraf assets/js"
 	},
 	"keywords": [
 		"engelbart",
-		"http-server"
+		"typescript",
+		"interactive-document",
+		"douglas-engelbart",
+		"human-intellect"
 	],
-	"author": "",
+	"author": "TJ Labs",
 	"license": "ISC",
 	"devDependencies": {
-		"http-server": "^14.1.1"
+		"concurrently": "^8.2.0",
+		"http-server": "^14.1.1",
+		"rimraf": "^5.0.1",
+		"typescript": "^5.1.6"
 	}
 }
