@@ -1,0 +1,51 @@
+body { max-width: 600px; }
+
+.bg-number::after { content: '.'; }
+
+.side {
+  width: 250px;
+  margin-top: 0; margin-bottom: 1em;
+  margin-left: auto; margin-right: auto;
+  font-size: 85%; line-height: 140%;
+  color: #666;
+}
+.side > :first-child { margin-top: 0; }
+.side > :last-child { margin-bottom: 0; }
+.side {
+  float: right;
+  clear: right;
+  margin-right: calc(-250px - 2em);
+}
+
+.footnote-label { cursor: help; }
+.footnote-toggle { display: none; }
+
+/* Desktop / Wide: */
+@media (min-width: 930px) {
+  /* hack to left-align the article */
+  body { margin: 2em 1em !important; }
+
+  /* .note-ref { cursor: pointer; } */
+  .note-ref:hover ~ .side {
+    background-color: #ddd;
+  }
+}
+
+/* Mobile / Narrow: */
+@media (max-width: 930px) {
+  .side { width: calc(100% - 3em); }
+  main .side { padding: 0 2em; }
+  .side {
+    float: inherit;
+    clear: both;
+    margin: 1em auto;
+    background: none;
+  }
+
+  .side {
+    display: none;
+  }
+  .footnote-toggle:checked + .footnote-ref + .side {
+    display: block;
+  }
+}
