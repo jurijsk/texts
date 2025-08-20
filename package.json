@@ -1,8 +1,8 @@
 {
-	"name": "engelbart-document",
+	"name": "texts",
 	"version": "1.0.0",
-	"description": "Augmenting Human Intellect: A Conceptual Framework - Interactive Document with TypeScript",
-	"main": "Augmenting-Human-Intellect.html",
+	"description": "",
+	"main": "",
 	"scripts": {
 		"start": "http-server  -c-1",
 		"dev": "concurrently \"npm run watch\" \"npm run start\"",
@@ -11,13 +11,7 @@
 		"type-check": "tsc --noEmit",
 		"clean": "rimraf assets/js"
 	},
-	"keywords": [
-		"engelbart",
-		"typescript",
-		"interactive-document",
-		"douglas-engelbart",
-		"human-intellect"
-	],
+	"keywords": [],
 	"author": "TJ Labs",
 	"license": "ISC",
 	"devDependencies": {
